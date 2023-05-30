@@ -1,21 +1,19 @@
-import { Component,OnInit } from '@angular/core';
-import {FormGroup,FormControl,FormArray,Validators} from '@angular/forms'; 
-import { SampleserviceService } from '../services/sampleservice.service';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import{FormGroup,FormArray,FormControl,Validators} from '@angular/forms'
 import { Ilogin } from '../interfaces/ilogin';
-import { AppRoutingModule } from '../app-routing.module';
 import { Router } from '@angular/router';
+import { SampleserviceService } from '../services/sampleservice.service';
 
 @Component({
-  selector: 'app-adminsignin',
-  templateUrl: './adminsignin.component.html',
-  styleUrls: ['./adminsignin.component.css']
+  selector: 'app-customerlogin',
+  templateUrl: './customerlogin.component.html',
+  styleUrls: ['./customerlogin.component.css']
 })
-export class AdminsigninComponent implements OnInit{
+export class CustomerloginComponent implements OnInit{
 
   userform!: FormGroup;
 
-  data: Ilogin;
+  data: Ilogin
   bo:boolean;
 
   constructor(private s:SampleserviceService,private h:Router){}
@@ -40,8 +38,7 @@ export class AdminsigninComponent implements OnInit{
      if(m!=null){
       if(m.password===p){
         console.log("welcome");
-       // this.h.navigate(['adminpage']);
-        this.h.navigate(['customerhome']);
+        this.h.navigate(['adminpage']);
       }
       else{
         console.log("go back");
@@ -60,5 +57,4 @@ export class AdminsigninComponent implements OnInit{
     
   }
 
-  
 }

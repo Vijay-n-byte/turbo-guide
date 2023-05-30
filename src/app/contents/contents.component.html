@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="ll">
+        <div class="row ">
+            <div class="col-3"  *ngFor="let p of k;let u=index;">
+                <div class="im">
+                    <img src="{{p.img}}" width="150px"><br>
+                </div>           
+                <div class="re">
+                    <table>
+                        <tr>
+                            <td><b>name</b></td>
+                            <td>{{p.productname}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>description</b></td>
+                            <td>{{p.description}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>cost</b></td>
+                            <td>{{p.cost}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>category</b></td>
+                            <td>{{p.category}}</td>
+                        </tr>
+                        <tr>
+                            <button (click)="loginfirst()">buy</button>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- <div class="ll">
+    <div class="row ">
+        <div class="col-3"  *ngFor="let p of k;let u=index;">
+            <div class="im">
+                <img src="{{p.img}}" width="150px"><br>
+            </div>           
+            <div class="re">
+                <table>
+                    <tr>
+                        <td><b>name</b></td>
+                        <td>{{p.productname}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>description</b></td>
+                        <td>{{p.description}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>cost</b></td>
+                        <td>{{p.cost}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>category</b></td>
+                        <td>{{p.category}}</td>
+                    </tr>
+                    <tr>
+                        <button>buy</button>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
