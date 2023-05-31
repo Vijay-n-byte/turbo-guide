@@ -9,6 +9,7 @@ import { CustomerloginComponent } from './customerlogin/customerlogin.component'
 import { CustomerComponent } from './customer/customer/customer.component';
 import { CustomersigininComponent } from './customersiginin/customersiginin.component';
 import { CartComponent } from './customer/cart/cart.component';
+import { CustomercontentComponent } from './customer/customercontent/customercontent.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"customersignin",component:CustomersigininComponent},
   {path:"adminpage",component:AdminComponent,children:[{path:"changepass",component:ChangepassComponent},
   {path:"adminhome",component:AdminhomeComponent}],pathMatch:"prefix"},
-  {path:"customerhome",component:CustomerComponent,children:[{path:"customercart",component:CartComponent}]},
+  {path:"customerhome",component:CustomerComponent,children:[{path:"customercart",component:CartComponent},
+  {path:"productsbuypage",component:CustomercontentComponent}]},
 ];
 
 @NgModule({

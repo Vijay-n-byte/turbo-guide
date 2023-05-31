@@ -4,12 +4,16 @@ import { Observable } from 'rxjs';
 import { Ilogin } from '../interfaces/ilogin';
 import { Products } from '../interfaces/products';
 import { Customer } from '../interfaces/customer';
+import { Customerdetails } from '../interfaces/customerdetails';
+import { Addtocart } from '../interfaces/addtocart';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SampleserviceService {
   data:Ilogin;
+  user:string;
+  customerid:number;
 
   constructor(private http:HttpClient) { }
 
@@ -17,6 +21,46 @@ export class SampleserviceService {
   private root1:string ="http://localhost:8080/products";
   private root2:string ="http://localhost:8080/products/dummy";
   private root3:string ="http://localhost:8080/customers";
+  private root4:string ="http://localhost:8080/customers/full/";
+  private root5:string ="http://localhost:8080/customers/customerno=";
+  private root6:string ="http://localhost:8080/customers/cartadd/";
+  private root7:string ="http://localhost:8080/customers/cart/";
+
+  set(n:string){
+    this.user=n;
+  }
+  get():string{
+    return this.user;
+  }
+
+  set1(m:number){
+   // console.log(m);
+    this.customerid=m;
+  }
+ 
+
+  addtocart(pr:number,qu:number):Observable<Addtocart|null>|null{
+    let r:number=this.customerid as number;
+    let w=`${this.root6}${this.customerid}`;
+    console.log(w);
+   
+    let d:Addtocart={productnumber:pr,quantity:qu};
+   
+   return this.http.post<Addtocart>(w,d); 
+ }
+
+ getcart():Observable<any|null>|null{
+  let w=`${this.root7}${this.customerid}`;
+  console.log(w);
+  return this.http.get<any>(w);
+ }
+
+
+
+  getcustomerdetails():Observable<Customerdetails|null>|null{
+    let k:string=`${this.root4}${this.user}`;
+    return this.http.get<Customerdetails>(k);
+  }
   
 
   
@@ -48,23 +92,9 @@ export class SampleserviceService {
   }
 
 
-  // uploadproducts(y:File):Observable<any|null>|null{
-  //   const f:FormData=new FormData();
-  //   f.append('file',y);
-  //   console.log(y);
-  //   const request=new HttpRequest('POST',this.root2,f,{
-  //     reportProgress:true,
-  //     responseType:'json'
-  //   });
-  //   return this.http.request(request);
-  //  // return this.http.post<any>(this.root2,y);
-  // }
 
-  // uploadproducts(y:FormData):Observable<any|null>|null{
-  //   return this.http.post(this.root2,y);
-    
-   
-  // }
+
+ 
 
   uploadproducts(y:Products):Observable<any|null>|null{
     console.log(y);

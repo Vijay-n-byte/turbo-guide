@@ -41,7 +41,8 @@ export class AdminsigninComponent implements OnInit{
       if(m.password===p){
         console.log("welcome");
        // this.h.navigate(['adminpage']);
-        this.h.navigate(['customerhome']);
+        this.s.set(y.value.username);
+        this.h.navigate(['customerhome/productsbuypage']);
       }
       else{
         console.log("go back");

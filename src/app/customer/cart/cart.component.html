@@ -1,1 +1,26 @@
-<p>cart works!</p>
+<div>
+    <div class="row cop">
+        <h6>{{r.totalcost}}</h6><br>
+        <table>
+            <thead>
+                <tr>
+                    <td>image</td>
+                    <td>name</td>
+                    <td>category</td>
+                    <td>cost</td>
+                    <td>quantity</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let kk of r.pp">
+                    <td><img src={{kk.k.pro.img}} width="120px"></td>
+                   <td>{{kk.k.pro.productname}}</td>
+                    <td>{{kk.k.pro.category}}</td>
+                    <td>{{kk.cost}}</td>
+                    <td>{{kk.quantity}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
