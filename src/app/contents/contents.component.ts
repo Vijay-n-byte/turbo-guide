@@ -19,14 +19,10 @@ export class ContentsComponent implements OnInit {
     this.g.getproductsdetails().subscribe(
       m =>this.k=m
      );
-    
   }
-
-  loginfirst(){
+  sendtologin(){
     this.k1.navigate(['adminlogin']);
-
   }
-
   
 
 }

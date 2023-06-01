@@ -1,5 +1,5 @@
-.row{
-    /* border:2px solid green; */
+ /* .row{
+   
     padding-left: 60px;
 
 }
@@ -36,4 +36,35 @@ img{
 }
 table{
     font-size:12px;
+}  */
+
+.cop1{
+    height: 60px;
+}
+
+
+.container-fluid{
+    
+    border:2px solid black;
+    
+}
+
+
+.col-3{
+    border:2px solid black;
+    height:40vh;
+    
+}
+.imgblock{
+    height: 35%;
+}
+.infoblock{
+    height:45%;
+}
+.buttonsections{
+    height:20%;
+}
+input{
+    width:60px;
+    margin-right: 10px;
 }

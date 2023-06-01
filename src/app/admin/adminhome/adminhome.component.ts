@@ -4,7 +4,7 @@ import { PopupaddComponent } from '../popupadd/popupadd.component';
 import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 import {FormGroup,FormControl,FormArray,Validators} from '@angular/forms'; 
 import { SampleserviceService } from 'src/app/services/sampleservice.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Products } from 'src/app/interfaces/products';
 
 @Component({
@@ -27,6 +27,7 @@ export class AdminhomeComponent implements OnInit {
      this.g.getproductsdetails().subscribe(
       m =>this.k=m
      );
+    //  console.log("refreshed");
   }
 
  
@@ -36,7 +37,8 @@ export class AdminhomeComponent implements OnInit {
   }
   closemodal(){
     this.op="modalbackground1";
-    this.j.navigate(['adminpage']);
+   this.j.navigate(['adminpage/adminhome']);
+    // this.t.reload();
   
   }
   submitvalue(){

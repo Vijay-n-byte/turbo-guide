@@ -19,28 +19,9 @@ export class PopupaddComponent implements OnInit{
     
   }
   
-  // onFileSelected(event){
-  //   const file:File=event.target.files[0];
-  //   if(file){
-  //     console.log("hello");
-  //     const f=new FormData();
-  //     f.append("sample",file);
-  //     f.append("nn","vijay");
-  //     this.y.uploadproducts(f).subscribe();
-  //   }
-  
-  // }
 
-  // onFileSelected(event){
-  //   let f=new FormData();
-  //   let file:File=event.target.files[0];
-  //   console.log(file);
-  //   if(file){
-  //     console.log("hello");
-  //     f.append("sample",file);
-  //     this.y.uploadproducts(f).subscribe();
-  //   }
-  // }
+
+ 
   submitvalue(n:NgForm){
     let p=n.value;
     console.log(p);

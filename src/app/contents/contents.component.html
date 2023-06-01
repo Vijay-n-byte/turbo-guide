@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="ll">
         <div class="row ">
             <div class="col-3"  *ngFor="let p of k;let u=index;">
@@ -33,36 +33,42 @@
     </div>
 
 
-</div>
-<!-- <div class="ll">
-    <div class="row ">
-        <div class="col-3"  *ngFor="let p of k;let u=index;">
-            <div class="im">
-                <img src="{{p.img}}" width="150px"><br>
-            </div>           
-            <div class="re">
+</div> -->
+
+
+<div>
+    <div class="row cop1">
+        
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let g of k">
+            <div class="imgblock">
+                <img src="{{g.img}}" width="120px"><br>
+            </div>
+            <div class="infoblock">
                 <table>
                     <tr>
-                        <td><b>name</b></td>
-                        <td>{{p.productname}}</td>
+                        <td>name</td>
+                        <td>{{g.productname}}</td>
                     </tr>
                     <tr>
-                        <td><b>description</b></td>
-                        <td>{{p.description}}</td>
+                        <td>description</td>
+                        <td>{{g.description}}</td>
                     </tr>
                     <tr>
-                        <td><b>cost</b></td>
-                        <td>{{p.cost}}</td>
+                        <td>category</td>
+                        <td>{{g.category}}</td>
                     </tr>
                     <tr>
-                        <td><b>category</b></td>
-                        <td>{{p.category}}</td>
-                    </tr>
-                    <tr>
-                        <button>buy</button>
+                        <td>cost</td>
+                        <td>{{g.cost}}</td>
                     </tr>
                 </table>
             </div>
+            <div class="buttonsections">
+                <button (click)="sendtologin()">buy now</button>
+            </div>
         </div>
-    </div>
-</div> -->
+    </div> 
+</div>
+    

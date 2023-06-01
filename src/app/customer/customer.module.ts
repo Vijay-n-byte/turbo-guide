@@ -5,13 +5,17 @@ import { CustomercontentComponent } from './customercontent/customercontent.comp
 import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { PaymentComponent } from './payment/payment.component';
+import { SuccessfulComponent } from './successful/successful.component';
 
 
 @NgModule({
   declarations: [
     CustomerComponent,
     CustomercontentComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent,
+    SuccessfulComponent
   ],
   imports: [
     CommonModule,

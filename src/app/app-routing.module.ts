@@ -10,6 +10,9 @@ import { CustomerComponent } from './customer/customer/customer.component';
 import { CustomersigininComponent } from './customersiginin/customersiginin.component';
 import { CartComponent } from './customer/cart/cart.component';
 import { CustomercontentComponent } from './customer/customercontent/customercontent.component';
+import { ContentsComponent } from './contents/contents.component';
+import { PaymentComponent } from './customer/payment/payment.component';
+import { SuccessfulComponent } from './customer/successful/successful.component';
 
 
 const routes: Routes = [
@@ -20,7 +23,10 @@ const routes: Routes = [
   {path:"adminpage",component:AdminComponent,children:[{path:"changepass",component:ChangepassComponent},
   {path:"adminhome",component:AdminhomeComponent}],pathMatch:"prefix"},
   {path:"customerhome",component:CustomerComponent,children:[{path:"customercart",component:CartComponent},
-  {path:"productsbuypage",component:CustomercontentComponent}]},
+  {path:"productsbuypage",component:CustomercontentComponent},
+]},
+{path:"paymentpage",component:PaymentComponent},
+{path:"confirmpage",component:SuccessfulComponent}
 ];
 
 @NgModule({

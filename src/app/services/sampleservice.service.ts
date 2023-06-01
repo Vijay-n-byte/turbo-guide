@@ -14,6 +14,7 @@ export class SampleserviceService {
   data:Ilogin;
   user:string;
   customerid:number;
+  totalprice:number;
 
   constructor(private http:HttpClient) { }
 
@@ -25,6 +26,8 @@ export class SampleserviceService {
   private root5:string ="http://localhost:8080/customers/customerno=";
   private root6:string ="http://localhost:8080/customers/cartadd/";
   private root7:string ="http://localhost:8080/customers/cart/";
+  private root8:string ="http://localhost:8080/customers/";
+  
 
   set(n:string){
     this.user=n;
@@ -36,6 +39,20 @@ export class SampleserviceService {
   set1(m:number){
    // console.log(m);
     this.customerid=m;
+  }
+
+  settotalprice(m:number){
+    console.log(m);
+    this.totalprice=m;
+  }
+
+  gettotalprice():number{
+    return this.totalprice;
+  }
+
+  customerbookingcofirm():Observable<any|null>|null{
+    let r=`${this.root8}${this.customerid}/confirm`;
+    return this.http.post<any>(r,null);
   }
  
 
